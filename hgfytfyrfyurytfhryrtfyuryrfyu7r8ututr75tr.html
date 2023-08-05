@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sfef</title>
+    <style>
+      /* Define some CSS styles for the form */
+      form {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #999;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type=text] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px #ccc;
+      }
+      input[type=submit] {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #chatbot-output {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #999;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>ChatBot</title>
+    </head>
+    <body>
+      <h1>Ask ChatBot a question:</h1>
+      <form>
+        <label for="question">Question:</label>
+        <input type="text" id="question" name="question"><br><br>
+        <label for="answer">Answer:</label>
+        <textarea id="answer" name="answer" readonly></textarea><br><br>
+        <button type="button" onclick="get_response()">Submit</button>
+      </form>
+
+      <script>
+        // Define a dictionary of questions and answers
+        var qa_dict = {
+"سلام نام تو چیست":"سلام کاربر گرامی نام من ربات اصلی سایت پرکار هستم ",
+"":"",
+
+        };
+
+        // Define a function to get a response to a question
+        function get_response() {
+          // Get the question entered by the user
+          var question = document.getElementById("question").value;
+
+          // Check if the question is in the dictionary
+          if (question in qa_dict) {
+            // If the question is in the dictionary, display the corresponding answer
+            document.getElementById("answer").value = qa_dict[question];
+          } else {
+            // If the question is not in the dictionary, display a default response
+            document.getElementById("answer").value = "ببخشید من نتوانستم به سوالات شما جواب دهم";
+          }
+        }
+      </script>
+    </body>
+    </html>
