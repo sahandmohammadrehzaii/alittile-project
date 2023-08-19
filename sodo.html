@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try Windows 11</title>
+	<link rel="shortcut icon"
+		href=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210914203818/faviconWindows.png"
+		type="image/x-icon">
+<style>
+body{
+	overflow: hidden;
+	height: 100vh;
+}
+.taskbar{
+	background-color: #F3F3F3;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	z-index: 110;
+	justify-content: center;
+}
+.right{
+	justify-self: flex-end;
+	position: absolute;
+	right: 0;
+	margin: 6px 0;
+	height: 85%;
+}
+.startmenu{
+	position: absolute;
+	bottom: -655px;
+	width: 100%;
+	text-align: center;
+	transition: all 0.3s ease-in;
+}
+.startmenu img{
+	border-radius: 8px;
+}
+.wallpaper img{
+	height: 900px;
+}
+</style>
+</head>
+<body>
+	<div class="taskbar">
+		<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210914203932/icons-300x37.PNG"
+			alt="">
+		<img class="right"
+			src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210914204052/taskbar-200x37.PNG"
+			alt="">
+	</div>
+	<div class="startmenu">
+		<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210914204232/startmenu-289x300.PNG"
+			alt="">
+	</div>
+
+	<div class="wallpaper">
+		<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210914204725/windows11-300x169.jpg"
+			alt="">
+	</div>
+	<!-- Linking the external JavaScript -->
+	<script>
+let taskbar = document.getElementsByClassName("taskbar")[0]
+let startmenu = document.getElementsByClassName("startmenu")[0]
+
+taskbar.addEventListener("click", ()=>{
+	console.log("clicked");
+	if(startmenu.style.bottom == "50px"){
+		startmenu.style.bottom = "-655px"
+	}
+	else{
+		startmenu.style.bottom = "50px"
+	}
+})
+
+</script>
+</body>
+</html>
