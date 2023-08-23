@@ -1,30 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Fullscreen Overlay Navigation | CodingNepal</title>
-      <link rel="stylesheet" href="swap.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-   </head>
-   <body>
-      <input type="checkbox" id="active">
-      <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
-      <div class="wrapper">
-         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Feedback</a></li>
-         </ul>
+<!-- Coding by CodingNepal || www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoverable Sidebar Menu HTML CSS & JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CSS -->
+    <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav class="sidebar locked">
+      <div class="logo_items flex">
+        <span class="nav_image">
+          <img src="images/logo.png" alt="logo_img" />
+        </span>
+        <span class="logo_name">CodingNepal</span>
+        <i class="bx bx-lock-alt" id="lock-icon" title="Unlock Sidebar"></i>
+        <i class="bx bx-x" id="sidebar-close"></i>
       </div>
-      <div class="content">
-         <div class="title">
-            Fullscreen Overlay Navigation Bar
-         </div>
-         <p>
-            using only HTML & CSS
-         </p>
+
+      <div class="menu_container">
+        <div class="menu_items">
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Dashboard</span>
+              <span class="line"></span>
+            </div>
+            <li class="item">
+              <a href="#" class="link flex">
+                <i class="bx bx-home-alt"></i>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#" class="link flex">
+                <i class="bx bx-grid-alt"></i>
+                <span>All Projects</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Editor</span>
+              <span class="line"></span>
+            </div>
+            <li class="item">
+              <a href="#" class="link flex">
+                <i class="bx bxs-magic-wand"></i>
+                <span>Magic Build</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#" class="link flex">
+                <i class="bx bx-folder"></i>
+                <span>New Projects</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#" class="link flex">
+                <i class="bx bx-cloud-upload"></i>
+                <span>Upload New</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Setting</span>
+              <span class="line"></span>
+            </div>
+            <li class="item">
+              <a href="#" class="link flex">
+                <i class="bx bx-flag"></i>
+                <span>Notice Board</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#" class="link flex">
+                <i class="bx bx-award"></i>
+                <span>Award</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#" class="link flex">
+                <i class="bx bx-cog"></i>
+                <span>Setting</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar_profile flex">
+          <span class="nav_image">
+          </span>
+          <div class="data_text">
+
+          </div>
+        </div>
       </div>
-   </body>
+    </nav>
+
+    <!-- Navbar -->
+    <nav class="navbar flex">
+      <i class="bx bx-menu" id="sidebar-open"></i>
+      <input type="text" placeholder="Search..." class="search_box" />
+    </nav>
+  </body>
 </html>
