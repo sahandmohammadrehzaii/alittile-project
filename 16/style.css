@@ -1,0 +1,130 @@
+body{
+			margin:0;
+			padding:0;
+			background: #e1e1e1;
+			font-family:"Roboto Condensed", sans-serif;
+			font-size:14pt;
+			background:#888;
+		}
+		.click{
+			position:fixed;
+			display:inline-block;
+			bottom:0;
+			right:0;
+			margin-bottom:20px;
+			margin-right:20px;
+			padding:0;
+			width:200px;
+			text-align:center;
+		}
+		.click li{
+			list-style:none;
+			background:#333;
+			margin:0;
+			padding:10px 0 10px 0;
+			border:1px solid #33ccff;
+			border-radius:50px;
+		}
+		.click li a{
+			text-decoration:none;
+			color:#33ccff;
+			padding:10px 50px;
+			transition:color, .50s;
+		}
+		.click a:hover{
+			color:#fff;
+		}
+		.con{
+			position:fixed;
+			display:none;
+			bottom:0;
+			right:-400px;
+			margin:0 20px 20px 0;
+			padding:0;
+			width:350px;
+			box-shadow:2px 2px 18px 4px rgba(0,0,0,0.5);
+			-webkit-animation:cont .50s forwards;
+		}
+		.con:target{
+			display:table;
+		}
+		@-webkit-keyframes cont{
+			0%{right:-400px;}
+			100%{right:0;}
+		}
+		.send{
+			background:linear-gradient(to right bottom, #6600cc, #0000cc);
+			margin:0;
+			text-align:center;
+		}
+		.send form h1{
+			background:#004de6;
+			color:#fff;
+			font-size:15pt;
+			text-align:left;
+			margin:0;
+			padding:10px 0 10px 10px;
+		}
+		input[type=text]{
+			border:none;
+			border-bottom:1px solid #999966;
+			background:transparent;
+			font-family:"Roboto Condensed";
+			font-size:12pt;
+			padding:10px 30px 10px 0;
+			margin-bottom:20px;
+			color:#fff;
+		}
+		.message{
+			border:none;
+			border-bottom:1px solid #999966;
+			background:transparent;
+			font-family:"Roboto Condensed";
+			font-size:12pt;
+			padding:10px 20px 10px 0;
+			margin-bottom:20px;
+			color:#fff;
+		}
+		input[type=submit]{
+			border:1px solid #fff;
+			border-radius:50px;
+			padding:10px 50px;
+			margin:10px;
+			font-family:"Roboto Condensed";
+			font-size:15pt;
+			background:transparent;
+			color:#fff;
+		}
+		.cls{
+			background:#004de6;
+			color:#fff;
+			font-size:15pt;
+			text-align:left;
+			margin:0;
+			margin-top:30px;
+			padding:5px 0;
+		}
+		.cls a{
+			text-decoration:none;
+			color:#fff;
+			font-size:22pt;
+			margin:5px 10px;
+			transition:color, .20s;
+		}
+		.cls a:hover{
+			color:red;
+		}
+		.mysite{
+			color:#fff;
+			font-size:15pt;
+			text-align:center;
+			margin:0;
+			margin-top:10px;
+			padding:5px 0;
+		}
+		.mysite a{
+			text-decoration:none;
+			color:#fff;
+			font-size:14pt;
+			margin:5px 10px;
+		}
