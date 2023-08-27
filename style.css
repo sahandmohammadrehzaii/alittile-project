@@ -1,0 +1,231 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: radial-gradient(#9e9e9e, transparent);
+}
+
+video {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	transition: transform 0.4s;
+	object-position: center;
+}
+
+.imageContainer {
+	width: 380px;
+	height: 95vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: 6px solid #000;
+	border-radius: 60px;
+	position: relative;
+	overflow: hidden;
+	background: #000;
+}
+
+.imageContainerInner {
+	width: 100%;
+	height: 75vh;
+	overflow: hidden;
+	margin-top: -64px;
+	position: relative;
+}
+
+.imageContainer img {
+	display: flex;
+	align-self: center;
+	width: 100%;
+	height: 100%;
+	transform: scale(1);
+	transition: transform 0.4s;
+}
+
+.controls {
+	position: absolute;
+	bottom: 128px;
+	background: rgba(0, 0, 0, 0.54);
+	border-radius: 50px;
+	display: flex;
+	gap: 16px;
+	padding: 8px 12px;
+	z-index: 20;
+}
+
+.controls button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border: none;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.56);
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: system-ui, arial, sans-serif;
+	transition: transform 0.2s;
+}
+
+.controls button span {
+	display: none;
+}
+
+.controls button.active {
+	transform: scale(1.2);
+	color: yellow;
+	transition: transform 0.2s;
+}
+
+.controls button.active span {
+	font-size: 12px;
+	display: flex;
+}
+
+.otherControls {
+	position: absolute;
+	bottom: 16px;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 16px;
+	align-items: center;
+	z-index: 20;
+}
+
+.camerabutton {
+	height: 52px;
+	width: 52px;
+	background: #fff;
+	border-radius: 100%;
+	box-shadow: 0px 0px 0px 3px rgb(0 0 0 / 90%), 0px 0px 0px 6px #fff;
+	border: 0;
+}
+
+.thumbnail {
+	height: 48px;
+	width: 48px;
+	background: #fff;
+	overflow: hidden;
+	border-radius: 6px;
+	border: 0;
+}
+
+.switchCamera {
+	height: 48px;
+	width: 48px;
+	background: rgb(95 89 89 / 40%);
+	border: 0;
+	border-radius: 100%;
+}
+
+.switchCamera span {
+	color: #ffff;
+	display: flex;
+	justify-content: center;
+	font-size: 30px;
+}
+
+.thumbnail img {
+	object-fit: cover;
+}
+
+@media screen and (max-width: 767px) {
+	.imageContainer {
+		overflow: hidden;
+		border: 0;
+		border-radius: 0;
+	}
+
+	.imageContainer,
+	.imageContainer > img {
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.imageContainerInner {
+		height: 100vh;
+		margin: 0;
+	}
+}
+
+/* Styles for flip animation */
+@keyframes flipInY {
+	from {
+		transform: perspective(400px) rotateY(90deg);
+		opacity: 0;
+	}
+
+	to {
+		transform: perspective(400px) rotateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes flipOutY {
+	from {
+		transform: perspective(400px) rotateY(0);
+		opacity: 1;
+	}
+
+	to {
+		transform: perspective(400px) rotateY(90deg);
+		opacity: 0;
+	}
+}
+
+.flipping-out {
+	animation: flipOutY 0.5s forwards;
+}
+
+.flipping-in {
+	animation: flipInY 0.5s forwards;
+}
+
+.flash {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 9;
+	top: 0;
+}
+
+.shutterClick {
+	animation: cameraFlash 0.3s 0.3s alternate-reverse 1;
+}
+
+@keyframes cameraFlash {
+	from {
+		box-shadow: none;
+	}
+
+	to {
+		box-shadow: inset 0 0 0 100px #fff;
+	}
+}
+
+.heart {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	font-size: 24px;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: bottom 2s ease, opacity 2s ease;
+}
